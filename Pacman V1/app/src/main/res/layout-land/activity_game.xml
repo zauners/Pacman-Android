@@ -1,0 +1,139 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/linearGameLayout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".GameView">
+
+    <!--<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:id="@+id/linearGameLayout"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        tools:context=".GameView">-->
+
+
+    <LinearLayout
+        android:id="@+id/linearLayout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="horizontal"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:layout_editor_absoluteX="-112dp"
+        android:layout_marginLeft="150px">
+
+        <androidx.gridlayout.widget.GridLayout
+            android:id="@+id/gameBoard"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:columnCount="28"
+            app:orientation="horizontal"
+            app:rowCount="31" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/linearPacman"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="horizontal"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:layout_editor_absoluteX="-112dp"
+        android:layout_marginLeft="150px">
+
+        <androidx.gridlayout.widget.GridLayout
+            android:id="@+id/pacmanBoard"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            app:columnCount="28"
+            app:orientation="horizontal"
+            app:rowCount="31" />
+
+    </LinearLayout>
+
+    <Button
+        android:id="@+id/moveUp"
+        android:layout_width="wrap_content"
+        android:layout_height="123dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="50dp"
+        android:layout_marginEnd="16dp"
+        android:onClick="onClick"
+        android:text="up"
+        app:layout_constraintEnd_toStartOf="@+id/moveRight"
+        app:layout_constraintStart_toEndOf="@+id/moveLeft"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/moveLeft"
+        android:layout_width="wrap_content"
+        android:layout_height="123dp"
+        android:layout_marginTop="15dp"
+        android:layout_marginEnd="16dp"
+        android:onClick="onClick"
+        android:text="left"
+        app:layout_constraintEnd_toStartOf="@+id/moveDown"
+        app:layout_constraintTop_toBottomOf="@+id/moveUp" />
+
+    <Button
+        android:id="@+id/moveRight"
+        android:layout_width="wrap_content"
+        android:layout_height="123dp"
+        android:layout_marginTop="15dp"
+        android:layout_marginEnd="24dp"
+        android:onClick="onClick"
+        android:text="right"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/moveUp" />
+
+    <Button
+        android:id="@+id/moveDown"
+        android:layout_width="wrap_content"
+        android:layout_height="123dp"
+        android:layout_marginTop="15dp"
+        android:layout_marginEnd="16dp"
+        android:onClick="onClick"
+        android:text="down"
+        app:layout_constraintEnd_toStartOf="@+id/moveRight"
+        app:layout_constraintTop_toBottomOf="@+id/moveUp" />
+
+    <Button
+        android:id="@+id/instaDeath"
+        android:layout_width="85dp"
+        android:layout_height="71dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginBottom="16dp"
+        android:onClick="onClick"
+        android:text="DEATH"
+        app:layout_constraintBottom_toTopOf="@+id/moveRight"
+        app:layout_constraintStart_toEndOf="@+id/moveUp" />
+
+    <TextView
+        android:id="@+id/scoreView"
+        android:layout_width="80dp"
+        android:layout_height="21dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginBottom="320dp"
+        android:text="Score: "
+        app:layout_constraintBottom_toBottomOf="@+id/linearLayout"
+        app:layout_constraintEnd_toEndOf="@+id/linearLayout"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/instaWin"
+        android:layout_width="88dp"
+        android:layout_height="68dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginBottom="16dp"
+        android:layout_weight="1"
+        android:onClick="onClick"
+        android:text="WIN"
+        app:layout_constraintBottom_toTopOf="@+id/moveLeft"
+        app:layout_constraintEnd_toStartOf="@+id/moveUp" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
